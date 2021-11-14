@@ -1,0 +1,9 @@
+//@version=4
+//@WMSIDI
+study(title = "Engulfing Lines", overlay = true)
+alpha = open[3] > close[3] ? open[2] > close[2] ? open[1] > close[1] ? close > open ? close >= open[1] ? close[1] >= open ? close - open > open[1] - close[1] ? close :na :na : na : na : na :na :na
+beta  = open[3] > close[3] ? open[2] > close[2] ? open[1] > close[1] ? close > open ? close >= open[1] ? close[1] >= open ? close - open > open[1] - close[1] ? open :na :na : na : na : na :na :na
+gamma = open[3] > close[3] ? open[2] > close[2] ? open[1] > close[1] ? close > open ? close >= open[1] ? close[1] >= open ? close - open > open[1] - close[1] ? color.yellow :na :na : na : na : na :na :na
+barcolor(gamma)
+plot(alpha, "Line", color.red, 2, plot.style_line,true, show_last=1)
+plot(beta, "Line", color.blue, 2, plot.style_line,true, show_last=1)
